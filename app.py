@@ -162,13 +162,3 @@ def health():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port, debug=False)
-
-@app.route('/debug/env', methods=['GET'])
-def debug_env():
-    """Debug endpoint to check environment variables"""
-    return jsonify({
-        'has_anthropic_key': bool(ANTHROPIC_API_KEY),
-        'anthropic_key_length': len(ANTHROPIC_API_KEY) if ANTHROPIC_API_KEY else 0,
-        'has_acp_key': bool(ACP_API_KEY),
-        'anthropic_client': anthropic is not None
-    })
