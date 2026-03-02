@@ -26,3 +26,4 @@ python app.py
 
 ## Deployment
 Railway auto-deploy from GitHub push
+# Force redeploy
